@@ -10,18 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::view('/', 'home')->name('home');
+Route::view('/about', 'about')->name('about');
+Route::view('/portfolio', 'portfolio')->name('potfolio');
+Route::view('/contact', 'contact')->name('contact');
 
-Route::get('/', function () {
-    echo "<a href='". route('contactos') ."'>Contacto 1</a><br>";
-    echo "<a href='". route('contactos') ."'>Contacto 2</a><br>";
-    echo "<a href='". route('contactos') ."'>Contacto 3</a><br>";
-    echo "<a href='". route('contactos') ."'>Contacto 4</a><br>";
-});
 
-ROute::get('contactame', function(){
-    return "seccion de contactos";
-})->name('contactos');
+//esto utilizar cuando se muestran cositas como politicas de privacidad, terminos y condiciones, algo sin parametros
+//Route::view('/', 'home');
+//Route::view('/', 'home', ['nombre' => 'jorge el cagon']);
 
-Route::get('caca/{nombre?}', function($nombre = "invitado") {
-    return "hola " . $nombre . " este mundo es una caca";
-});
+
+// Route::get('/', function () {
+//     $nombre = "jorge el goloso";
+//     //return view('home')->with('nombre', $nombre);
+//     //return view('home')->with(['nombre' => $nombre]);
+//     //return view('home', ['nombre' => $nombre]);
+//     return view('home', compact('nombre'));
+// })->name('home');
