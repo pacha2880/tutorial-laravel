@@ -10,21 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+$portfolio = [
+    ['title' => 'Proyecto #1'],
+    ['title' => 'Proyecto #2'],
+    ['title' => 'Proyecto #3'],
+    ['title' => 'Proyecto #4']
+];
 Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
-Route::view('/portfolio', 'portfolio')->name('potfolio');
+Route::view('/portfolio', 'portfolio', compact('portfolio'))->name('potfolio');
 Route::view('/contact', 'contact')->name('contact');
-
-
-//esto utilizar cuando se muestran cositas como politicas de privacidad, terminos y condiciones, algo sin parametros
-//Route::view('/', 'home');
-//Route::view('/', 'home', ['nombre' => 'jorge el cagon']);
-
-
-// Route::get('/', function () {
-//     $nombre = "jorge el goloso";
-//     //return view('home')->with('nombre', $nombre);
-//     //return view('home')->with(['nombre' => $nombre]);
-//     //return view('home', ['nombre' => $nombre]);
-//     return view('home', compact('nombre'));
-// })->name('home');
