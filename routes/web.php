@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//cambiar de idioma
+//App::setLocale('en');
 
 Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
