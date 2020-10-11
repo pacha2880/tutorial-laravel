@@ -14,7 +14,7 @@
             <li>No hay proyectos para mostras</li>
         @endif --}}
         @forelse ($projects as $projectItem)
-            <li>{{ $projectItem->title }} 
+            <li><a href="{{ route('projects.show', $projectItem) }}">{{ $projectItem->title }} </a>
                 {{-- <br><small>{{ $portfolioItem->description }}
                 <br><strong>{{ $portfolioItem->created_at->diffForHumans() }}</strong>
                 {{ $loop->last ? " <- es el ultimo :v" : "" }}</small> --}}
