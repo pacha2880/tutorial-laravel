@@ -13,11 +13,16 @@
         @else
             <li>No hay proyectos para mostras</li>
         @endif --}}
-        @forelse ($portfolio as $portfolioItem)
-            <li>{{ $portfolioItem['title'] }} <small>{{ $loop->first ? "es el primero :v" : "" }}</small></li>
+        @forelse ($projects as $projectItem)
+            <li>{{ $projectItem->title }} 
+                {{-- <br><small>{{ $portfolioItem->description }}
+                <br><strong>{{ $portfolioItem->created_at->diffForHumans() }}</strong>
+                {{ $loop->last ? " <- es el ultimo :v" : "" }}</small> --}}
+            </li>
         @empty
             <li>No hay proyectos para mostras</li>
         @endforelse
+        {{ $projects->links() }}
     </ul>
 
 @endsection

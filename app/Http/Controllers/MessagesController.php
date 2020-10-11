@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mail\MessageReceived;
 
 class MessagesController extends Controller
 {
@@ -23,6 +24,8 @@ class MessagesController extends Controller
             'content.min'       => 'seras sacrificado'
         ]);
 
-        return 'Datos validados';
+        //Mail::to('evoicpc@mailinator.com')->send(new MessageReceived);
+
+        return 'Mensaje enviado';
     }
 }
