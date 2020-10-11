@@ -32,4 +32,34 @@ class ProjectController extends Controller
             'project' => $project
         ]);
     }
+
+    public function create()
+    {
+        return view('projects.create');
+    }
+
+    public function store()
+    {
+
+        $fields = request()->validate([
+            'title' => 'required',
+            'url' => 'required',
+            'description' => 'required'
+        ]);
+
+        //Project::create(request()->all());
+
+        //Project::create( request()->only('title', 'url', 'description') );
+
+        //pasar campos ya validados
+        Project::create($fields);
+
+        // Project::create([
+        //     'title' => request('title'),
+        //     'url' => request('url'),
+        //     'description' =>request('description')
+        // ]);
+
+        return redirect()->route('projects.index');
+    }
 }
