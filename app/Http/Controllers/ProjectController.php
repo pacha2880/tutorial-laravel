@@ -65,7 +65,7 @@ class ProjectController extends Controller
         //     'description' =>request('description')
         // ]);
 
-        return redirect()->route('projects.index');
+        return redirect()->route('projects.index')->with('status', 'El rpyecto fue creado :0');
     }
 
     public function edit(Project $project)
@@ -85,13 +85,13 @@ class ProjectController extends Controller
 
         $project->update( $request->validated() );
 
-        return redirect()->route('projects.show', $project);
+        return redirect()->route('projects.show', $project)->with('status', 'El rpyecto fue editado :0');
     }
 
     public function destroy(Project $project)
     {
         $project->delete();
 
-        return redirect()->route('projects.index');        
+        return redirect()->route('projects.index')->with('status', 'El rpyecto fue eliminado :0');        
     }
 }

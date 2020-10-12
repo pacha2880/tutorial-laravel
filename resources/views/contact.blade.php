@@ -4,6 +4,7 @@
 
 @section('content')
     <h1>{{ __('Contact') }}</h1>
+
     @if ($errors->any())
         {{ $errors->first('name') }}
         <ul>
@@ -12,6 +13,7 @@
         @endforeach
         </ul>
     @endif
+    
     <form method="POST" action="{{ route('contact') }}">
         @csrf
         <input name="name" placeholder="Nombre..." value="{{ old('name') }}"><br>

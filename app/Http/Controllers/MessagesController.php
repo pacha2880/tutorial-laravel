@@ -26,6 +26,6 @@ class MessagesController extends Controller
 
         //Mail::to('evoicpc@mailinator.com')->send(new MessageReceived);
 
-        return 'Mensaje enviado';
+        return back()->with('status', 'recibimos tu mensaje, te respondo maniana');
     }
 }

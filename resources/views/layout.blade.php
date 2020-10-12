@@ -10,6 +10,9 @@
 </head>
 <body>
     @include('partials/nav')
+    {{-- para los mensajes de sesion --}}
+    @include('partials.session-status')
+
     @yield('content')
 </body>
 </html>
