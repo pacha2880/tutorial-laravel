@@ -44,7 +44,7 @@ class ProjectController extends Controller
     public function store(SaveProjectRequest $request)
     {
 
-        return $request->validated();
+        Project::create($request->validated());
 
         // $fields = request()->validate([
         //     'title' => 'required',
@@ -86,5 +86,12 @@ class ProjectController extends Controller
         $project->update( $request->validated() );
 
         return redirect()->route('projects.show', $project);
+    }
+
+    public function destroy(Project $project)
+    {
+        $project->delete();
+
+        return redirect()->route('projects.index');        
     }
 }
