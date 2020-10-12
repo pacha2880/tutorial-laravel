@@ -25,7 +25,7 @@ Route::resource('portafolio', 'ProjectController')->names('projects')->parameter
 // Route::patch('/portafolio/{project}', 'ProjectController@update')->name('projects.update');
 
 // Route::post('/portafolio', 'ProjectController@store')->name('projects.store');
-// Route::get('/portafolio/{pproject}', 'ProjectController@show')->name('projects.show');
+// Route::get('/portafolio/{project}', 'ProjectController@show')->name('projects.show');
 
 // Route::delete('/portafolio/{project}', 'ProjectController@destroy')->name('projects.destroy');
 
