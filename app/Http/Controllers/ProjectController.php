@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\CreateProjectRequest;
 
 class ProjectController extends Controller
 {
@@ -38,21 +39,23 @@ class ProjectController extends Controller
         return view('projects.create');
     }
 
-    public function store()
+    public function store(CreateProjectRequest $request)
     {
 
-        $fields = request()->validate([
-            'title' => 'required',
-            'url' => 'required',
-            'description' => 'required'
-        ]);
+        return $request->validated();
+
+        // $fields = request()->validate([
+        //     'title' => 'required',
+        //     'url' => 'required',
+        //     'description' => 'required'
+        // ]);
+        // Project::create($fields);
 
         //Project::create(request()->all());
 
         //Project::create( request()->only('title', 'url', 'description') );
 
         //pasar campos ya validados
-        Project::create($fields);
 
         // Project::create([
         //     'title' => request('title'),

@@ -25,5 +25,5 @@ Route::get('/portafolio/{project}', 'ProjectController@show')->name('projects.sh
 
 Route::view('/contacto', 'contact')->name('contact');
 
-Route::post('contact', 'MessagesController@store');
+Route::post('contact', 'MessagesController@store')->name('contact');
 // Route::resource('projectos', 'PortfolioController');e('contact');
