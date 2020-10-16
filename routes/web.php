@@ -17,7 +17,10 @@ Route::view('/', 'home')->name('home');
 Route::view('/quienes-somos', 'about')->name('about');
 
 
-Route::resource('portafolio', 'ProjectController')->names('projects')->parameters(['portafolio' => 'project']);
+Route::resource('portafolio', 'ProjectController')
+    ->names('projects')
+    ->parameters(['portafolio' => 'project'])
+    ->names('projects');
 
 // Route::get('/portafolio', 'ProjectController@index')->name('projects.index');
 // Route::get('/portafolio/crear', 'ProjectController@create')->name('projects.create');
