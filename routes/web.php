@@ -32,3 +32,5 @@ Route::resource('portafolio', 'ProjectController')->names('projects')->parameter
 Route::view('/contacto', 'contact')->name('contact');
 Route::post('/contacto', 'MessagesController@store')->name('contact');
 // Route::resource('projectos', 'PortfolioController');e('contact');
+
+Auth::routes(['register' => false]);
