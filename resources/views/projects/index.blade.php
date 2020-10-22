@@ -12,19 +12,21 @@
         @forelse ($projects as $projectItem)
             <li class="list-group-item border-0 mb-3 shadow-sm">
                 <a 
-                    class="d-flex"
+                    class="d-flex justify-content-between align-items-center"
                     href="{{ route('projects.show', $projectItem) }}"
                 >
-                    <span>
+                    <span class="text-secondary font-weight-bold">
                         {{ $projectItem->title }} 
                     </span>
-                    <span>
+                    <span class="text-black-50">
                         {{ $projectItem->created_at->format('d/m/Y') }} 
                     </span>
                 </a>
             </li>
         @empty
-            <li>No hay proyectos para mostras</li>
+            <li class="list-group-item border-0 mb-3 shadow-sm">
+                No hay proyectos para mostras
+            </li>
         @endforelse
         {{ $projects->links() }}
     </ul>
