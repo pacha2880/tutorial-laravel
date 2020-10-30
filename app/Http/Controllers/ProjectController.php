@@ -14,17 +14,17 @@ class ProjectController extends Controller
         //$this->middleware('auth')->only('create', 'edit');
         $this->middleware('auth')->except('index', 'show');
     }
-    
+
     public function index()
     {
         //$portfolio = DB::table('projects')->get();
         //$portfolio = Project::orderBy('description', 'DESC')->get();
-        
+
         // $portfolio = Project::latest('created_at')->paginate();
         // return view('portfolio', compact('portfolio'));
 
         return view('projects.index', [
-            'projects' => Project::latest()->paginate()
+            'projects' => Project::latest()->paginate(10)
         ]);
     }
 
@@ -75,7 +75,7 @@ class ProjectController extends Controller
             'project' => $project
         ]);
     }
-    
+
     public function update(Project $project, SaveProjectRequest $request)
     {
         // $project->update([
@@ -84,7 +84,7 @@ class ProjectController extends Controller
         //     'description' => request('description')
         // ]);
 
-        $project->update( $request->validated() );
+        $project->update($request->validated());
 
         return redirect()->route('projects.show', $project)->with('status', 'El rpyecto fue editado :0');
     }
@@ -93,6 +93,6 @@ class ProjectController extends Controller
     {
         $project->delete();
 
-        return redirect()->route('projects.index')->with('status', 'El rpyecto fue eliminado :0');        
+        return redirect()->route('projects.index')->with('status', 'El rpyecto fue eliminado :0');
     }
 }
