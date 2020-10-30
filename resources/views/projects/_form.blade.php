@@ -29,3 +29,7 @@
 </div>
 
 <button class="btn btn-primary btn-lg btn-block">{{ $btnText }}</button>
+<a class="btn btn-link btn-block"
+    href="{{ route('projects.index') }}">
+    Cancelar
+</a>
